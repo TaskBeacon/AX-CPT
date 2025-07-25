@@ -4,9 +4,9 @@
 |---|---|
 | Name | AX-CPT Task |
 | Version | main (1.0) |
-| URL / Repository | https://github.com/TaskBeacon/AXCPT |
+| URL / Repository | https://github.com/TaskBeacon/AX-CPT |
 | Short Description | A task measuring cognitive control, context processing, and goal maintenance. |
-| Created By | zh1peng |
+| Created By | Zhipeng Cao (zhipeng30@foxmail.com) |
 | Date Updated | 2025/07/25 |
 | PsyFlow Version |0.1.0|
 | PsychoPy Version |2025.1.1              |
@@ -19,9 +19,9 @@ This task is an AX-Continuous Performance Test (AX-CPT) designed to assess cogni
 ### Block-Level Flow
 | Step | Description |
 |---|---|
-| 1. Instruction | For each block (1-Back then 2-Back), instructions are displayed. The first half of the blocks are 1-Back, the second half are 2-Back. |
-| 2. Trial Execution | The block runs for a set number of trials, as defined in `config.yaml`. |
-| 3. Block Break | After each block, a break screen is shown with the accuracy for the 'match' trials in that block. |
+| 1. Instruction | Instructions are displayed at the beginning of the experiment. |
+| 2. Trial Execution | Each block runs for a set number of trials, as defined in `config.yaml`. |
+| 3. Block Break | After each block, a break screen is shown with the accuracy for the current block. |
 | 4. Goodbye | After all blocks are complete, a "goodbye" message is displayed. |
 
 ### Trial-Level Flow
@@ -62,12 +62,13 @@ This task is an AX-Continuous Performance Test (AX-CPT) designed to assess cogni
 | cue_B | text | The cue letter 'B'. |
 | probe_X | text | The probe letter 'X'. |
 | probe_Y | text | The probe letter 'Y'. |
-| correct_feedback | text | "正确" (Correct) in green. |
-| incorrect_feedback | text | "错误" (Incorrect) in red. |
-| no_response_feedback | text | "未反应" (No response) in orange. |
+| correct_feedback | text | "正确" (Correct) in white. |
+| incorrect_feedback | text | "错误" (Incorrect) in white. |
+| no_response_feedback | text | "未反应" (No response) in white. |
 | instruction_text | textbox | Instructions explaining the task. |
+| instruction_text_voice | voice | Voice instructions for the task. |
 | block_break | text | Feedback shown between blocks. |
-| good_bye | textbox | Final message at the end of the task. |
+| good_bye | text | Final message at the end of the task. |
 
 ### d. Timing
 | Phase | Duration (s) | Config Variable |
