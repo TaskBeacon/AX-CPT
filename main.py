@@ -38,14 +38,17 @@ win, kb = initialize_exp(settings)
 
 # 6. Setup stimulus bank
 stim_bank = StimBank(win, cfg['stim_config']) \
-.convert_to_voice(['instruction_text']) \
+.convert_to_voice(['instruction_text'], voice=settings.voice_name) \
 .preload_all()
 
 # Save settings to file (for logging and reproducibility)
 settings.save_to_json()
 trigger_sender.send(settings.triggers.get("exp_onset"))
 # Show instructions
-StimUnit('instruction_text', win, kb).add_stim(stim_bank.get('instruction_text')).add_stim(stim_bank.get('instruction_text_voice')).wait_and_continue()
+StimUnit('instruction_text', win, kb)\
+    .add_stim(stim_bank.get('instruction_text'))\
+    .add_stim(stim_bank.get('instruction_text_voice'))\
+    .wait_and_continue()
 
 # Run task blocks
 all_data = []
@@ -71,10 +74,10 @@ for block_i in range(settings.total_blocks):
     StimUnit('block', win, kb).add_stim(stim_bank.get_and_format('block_break',
                                                               block_num=block_i+1,
                                                              total_blocks=settings.total_blocks,
-                                                             accuracy=accuracy)).wait_and_continue()                                                              block_num=block_i+1,                                                             total_blocks=settings.total_blocks,                                                             accuracy=accuracy)).wait_and_continue()
+                                                             accuracy=accuracy))\
+                                .wait_and_continue() 
 
 # Final screen (e.g., goodbye or total score)
-win.flip() # Clear the screen before the final message
 StimUnit('goodbye', win, kb).add_stim(stim_bank.get('good_bye')).wait_and_continue(terminate=True)
 
 trigger_sender.send(settings.triggers.get("exp_end"))

@@ -11,6 +11,8 @@
 | PsyFlow Version |0.1.0|
 | PsychoPy Version |2025.1.1              |
 | Modality     |Behavior/EEG                  |
+| Language | Chinese |
+| Voice Name | zh-CN-YunyangNeural |
 
 ## 1. Task Overview
 This task is an AX-Continuous Performance Test (AX-CPT) designed to assess cognitive control and context processing. Participants are presented with a series of letter pairs (cue followed by probe). They must make a specific target response only when the cue is an 'A' and the probe is an 'X' (AX trials). For all other combinations (AY, BX, BY), a different response (or no response) is required.
